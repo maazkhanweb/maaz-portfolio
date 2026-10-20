@@ -1,0 +1,591 @@
+/*
+|--------------------------------------------------------------------------
+| File: src/components/Stack/Stack.css
+| Description: Responsive Technology Stack section with dark and light
+| theme support.
+|--------------------------------------------------------------------------
+*/
+
+.stack-section {
+  position: relative;
+  width: 100%;
+  padding: 95px 7vw 80px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(139, 92, 246, 0.05),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 20% 75%,
+      rgba(34, 211, 238, 0.025),
+      transparent 28%
+    ),
+    #07070a;
+
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.025);
+}
+
+.stack-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.014) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.014) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+  opacity: 0.35;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+}
+
+/* LIGHT MODE */
+
+.portfolio.light .stack-section {
+  background:
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(124, 58, 237, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 20% 75%,
+      rgba(8, 145, 178, 0.045),
+      transparent 28%
+    ),
+    #f7f7fa;
+
+  color: #111118;
+  border-top-color: rgba(17, 17, 24, 0.08);
+}
+
+.portfolio.light .stack-section::before {
+  background-image:
+    linear-gradient(
+      rgba(17, 17, 24, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(17, 17, 24, 0.035) 1px,
+      transparent 1px
+    );
+
+  opacity: 0.5;
+}
+
+/* HEADER */
+
+.stack-header {
+  position: relative;
+  max-width: 1450px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 23% 77%;
+  align-items: start;
+}
+
+.stack-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.portfolio.light .stack-label {
+  color: rgba(17, 17, 24, 0.45);
+}
+
+.stack-label span {
+  color: #8b5cf6;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.portfolio.light .stack-label span {
+  color: #7c3aed;
+}
+
+.stack-label i {
+  width: 35px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    transparent
+  );
+}
+
+.stack-label strong {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.stack-heading {
+  max-width: 900px;
+}
+
+.stack-kicker {
+  margin: 0 0 20px;
+
+  color: rgba(255, 255, 255, 0.28);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.portfolio.light .stack-kicker {
+  color: rgba(17, 17, 24, 0.45);
+}
+
+.stack-heading h2 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: clamp(52px, 6.2vw, 96px);
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.portfolio.light .stack-heading h2 {
+  color: #111118;
+}
+
+.stack-heading h2 span {
+  background: linear-gradient(
+    100deg,
+    #fff,
+    #ddd6fe 20%,
+    #a78bfa 50%,
+    #67e8f9
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio.light .stack-heading h2 span {
+  background: linear-gradient(
+    100deg,
+    #312e81,
+    #7c3aed 50%,
+    #0891b2
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stack-description {
+  max-width: 630px;
+  margin: 26px 0 0;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.portfolio.light .stack-description {
+  color: rgba(17, 17, 24, 0.58);
+}
+
+/* GRID */
+
+.stack-grid {
+  position: relative;
+
+  max-width: 1250px;
+  margin: 55px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.portfolio.light .stack-grid {
+  border-top-color: rgba(17, 17, 24, 0.12);
+  border-left-color: rgba(17, 17, 24, 0.12);
+}
+
+/* CARDS */
+
+.stack-card {
+  position: relative;
+
+  min-height: 205px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.006);
+
+  transition:
+    background 0.4s ease,
+    transform 0.4s ease;
+}
+
+.portfolio.light .stack-card {
+  border-right-color: rgba(17, 17, 24, 0.12);
+  border-bottom-color: rgba(17, 17, 24, 0.12);
+
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.stack-card:hover {
+  background: rgba(139, 92, 246, 0.025);
+  transform: translateY(-3px);
+}
+
+.portfolio.light .stack-card:hover {
+  background: rgba(124, 58, 237, 0.045);
+}
+
+/* CARD TOP */
+
+.stack-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stack-card-number {
+  color: rgba(167, 139, 250, 0.7);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.portfolio.light .stack-card-number {
+  color: rgba(124, 58, 237, 0.7);
+}
+
+.stack-card-category {
+  color: rgba(255, 255, 255, 0.2);
+
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  text-align: right;
+}
+
+.portfolio.light .stack-card-category {
+  color: rgba(17, 17, 24, 0.42);
+}
+
+/* ICON */
+
+.stack-card-icon {
+  width: 46px;
+  height: 46px;
+
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(167, 139, 250, 0.14);
+  border-radius: 11px;
+
+  background: rgba(139, 92, 246, 0.025);
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 21px;
+
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.portfolio.light .stack-card-icon {
+  border-color: rgba(124, 58, 237, 0.18);
+
+  background: rgba(124, 58, 237, 0.05);
+
+  color: rgba(17, 17, 24, 0.65);
+}
+
+.stack-card:hover .stack-card-icon {
+  color: #c4b5fd;
+
+  border-color: rgba(167, 139, 250, 0.45);
+
+  background: rgba(139, 92, 246, 0.08);
+
+  transform: rotate(-4deg) scale(1.04);
+}
+
+.portfolio.light .stack-card:hover .stack-card-icon {
+  color: #7c3aed;
+
+  border-color: rgba(124, 58, 237, 0.4);
+
+  background: rgba(124, 58, 237, 0.1);
+}
+
+/* CARD CONTENT */
+
+.stack-card-content {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.stack-card-content h3 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+
+.portfolio.light .stack-card-content h3 {
+  color: #111118;
+}
+
+.stack-card-content p {
+  max-width: 230px;
+
+  margin: 7px 0 0;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.portfolio.light .stack-card-content p {
+  color: rgba(17, 17, 24, 0.52);
+}
+
+/* CARD LINE */
+
+.stack-card-line {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #67e8f9
+  );
+
+  transition: width 0.45s ease;
+}
+
+.stack-card:hover .stack-card-line {
+  width: 100%;
+}
+
+/* FOOTER */
+
+.stack-footer {
+  max-width: 950px;
+
+  margin: 40px auto 0;
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: rgba(255, 255, 255, 0.23);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.portfolio.light .stack-footer {
+  border-top-color: rgba(17, 17, 24, 0.1);
+  border-bottom-color: rgba(17, 17, 24, 0.1);
+
+  color: rgba(17, 17, 24, 0.42);
+}
+
+.stack-footer i {
+  color: #8b5cf6;
+
+  font-size: 12px;
+  font-style: normal;
+}
+
+.portfolio.light .stack-footer i {
+  color: #7c3aed;
+}
+
+.stack-footer strong {
+  color: #fff;
+
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.portfolio.light .stack-footer strong {
+  color: #111118;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .stack-section {
+    padding: 85px 6vw 70px;
+  }
+
+  .stack-header {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-label {
+    margin-bottom: 40px;
+  }
+
+  .stack-heading h2 {
+    font-size: clamp(50px, 8.5vw, 90px);
+  }
+
+  .stack-grid {
+    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .stack-section {
+    padding: 70px 22px 55px;
+  }
+
+  .stack-section::before {
+    background-size: 55px 55px;
+  }
+
+  .stack-label {
+    margin-bottom: 32px;
+    font-size: 9px;
+  }
+
+  .stack-label i {
+    width: 25px;
+  }
+
+  .stack-kicker {
+    margin-bottom: 16px;
+    font-size: 8px;
+  }
+
+  .stack-heading h2 {
+    font-size: clamp(42px, 11.8vw, 64px);
+    line-height: 0.9;
+  }
+
+  .stack-description {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .stack-grid {
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .stack-card {
+    min-height: 190px;
+  }
+
+  .stack-footer {
+    margin-top: 35px;
+    padding: 17px 10px;
+    gap: 7px;
+    font-size: 7px;
+  }
+
+  .stack-footer strong {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .stack-section {
+    padding: 62px 18px 50px;
+  }
+
+  .stack-heading h2 {
+    font-size: clamp(39px, 11.5vw, 58px);
+  }
+
+  .stack-description {
+    font-size: 11px;
+  }
+
+  .stack-card {
+    min-height: 180px;
+  }
+}

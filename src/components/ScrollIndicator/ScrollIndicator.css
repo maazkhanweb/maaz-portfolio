@@ -1,0 +1,159 @@
+/*
+|--------------------------------------------------------------------------
+| File: src/components/ScrollIndicator/ScrollIndicator.css
+| Description: Premium draggable right-side scroll indicator.
+|--------------------------------------------------------------------------
+*/
+
+.scroll-indicator {
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  z-index: 999;
+  width: 16px;
+  height: 240px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* TRACK */
+
+.scroll-indicator-track {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  width: 2px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(127, 127, 127, 0.18);
+}
+
+/* PROGRESS */
+
+.scroll-indicator-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    #8b5cf6,
+    #a78bfa,
+    #67e8f9
+  );
+  transition: height 0.12s linear;
+}
+
+/* DRAGGABLE THUMB */
+
+.scroll-indicator-thumb {
+  position: absolute;
+  right: 2px;
+  width: 10px;
+  height: 48px;
+  transform: translateY(-50%);
+  border-radius: 10px;
+
+  background: linear-gradient(
+    180deg,
+    #8b5cf6,
+    #c4b5fd
+  );
+
+  box-shadow:
+    0 0 12px rgba(139, 92, 246, 0.45),
+    0 0 25px rgba(139, 92, 246, 0.18);
+
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+
+  transition:
+    top 0.12s linear,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.scroll-indicator-thumb:hover {
+  transform: translateY(-50%) scaleX(1.08);
+  box-shadow:
+    0 0 15px rgba(139, 92, 246, 0.55),
+    0 0 30px rgba(139, 92, 246, 0.22);
+}
+
+.scroll-indicator-thumb:active {
+  cursor: grabbing;
+  transform: translateY(-50%) scaleX(1.12);
+  box-shadow:
+    0 0 18px rgba(139, 92, 246, 0.65),
+    0 0 35px rgba(139, 92, 246, 0.25);
+}
+
+/* DOTS */
+
+.scroll-indicator-dots {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.scroll-indicator-dots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+
+  background: #a78bfa;
+  opacity: 0.65;
+
+  box-shadow:
+    0 0 8px rgba(139, 92, 246, 0.5);
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .scroll-indicator {
+    right: 8px;
+    width: 12px;
+    height: 180px;
+  }
+
+  .scroll-indicator-track {
+    right: 4px;
+  }
+
+  .scroll-indicator-thumb {
+    right: 1px;
+    width: 8px;
+    height: 38px;
+  }
+
+  .scroll-indicator-dots {
+    display: none;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+  .scroll-indicator {
+    right: 5px;
+    height: 160px;
+  }
+
+  .scroll-indicator-thumb {
+    width: 7px;
+    height: 34px;
+  }
+}

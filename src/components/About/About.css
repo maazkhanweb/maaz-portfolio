@@ -1,0 +1,605 @@
+/*
+|--------------------------------------------------------------------------
+| File: src/components/About/About.css
+| Description: Responsive About section with dark and light theme support.
+|--------------------------------------------------------------------------
+*/
+
+.about-section {
+  position: relative;
+  width: 100%;
+  padding: 115px 7vw 90px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(139, 92, 246, 0.05),
+      transparent 30%
+    ),
+    #07070a;
+
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.025);
+}
+
+/* LIGHT MODE */
+
+.portfolio.light .about-section {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(124, 58, 237, 0.07),
+      transparent 30%
+    ),
+    #f7f7fa;
+
+  color: #111118;
+  border-top-color: rgba(17, 17, 24, 0.08);
+}
+
+/* HEADER */
+
+.about-header {
+  max-width: 1450px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 23% 77%;
+  align-items: start;
+}
+
+.about-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.portfolio.light .about-section-label {
+  color: rgba(17, 17, 24, 0.4);
+}
+
+.about-section-label span {
+  color: #8b5cf6;
+  font-weight: 800;
+}
+
+.portfolio.light .about-section-label span {
+  color: #7c3aed;
+}
+
+.about-section-label i {
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, #8b5cf6, transparent);
+}
+
+.about-heading {
+  width: 60%;
+  max-width: 900px;
+}
+
+.about-kicker {
+  margin: 0 0 20px;
+
+  color: rgba(255, 255, 255, 0.27);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.portfolio.light .about-kicker {
+  color: rgba(17, 17, 24, 0.45);
+}
+
+.about-heading h2 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: clamp(55px, 7vw, 105px);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.portfolio.light .about-heading h2 {
+  color: #111118;
+}
+
+.about-heading h2 span {
+  background: linear-gradient(
+    100deg,
+    #fff,
+    #ddd6fe 35%,
+    #a78bfa 65%,
+    #67e8f9
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio.light .about-heading h2 span {
+  background: linear-gradient(
+    100deg,
+    #312e81,
+    #7c3aed 55%,
+    #0891b2
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-heading h3 {
+  margin: 18px 0 0;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: clamp(22px, 2.5vw, 38px);
+  letter-spacing: -0.03em;
+}
+
+.portfolio.light .about-heading h3 {
+  color: rgba(17, 17, 24, 0.75);
+}
+
+.about-description {
+  max-width: 650px;
+  margin: 22px 0 0;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.portfolio.light .about-description {
+  color: rgba(17, 17, 24, 0.58);
+}
+
+/* PROFILE */
+
+.about-profile {
+  position: absolute;
+  top: 145px;
+  right: 7vw;
+
+  width: 30%;
+  max-width: 430px;
+}
+
+.about-profile-image {
+  position: relative;
+
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: #0b0b0f;
+}
+
+.portfolio.light .about-profile-image {
+  border-color: rgba(17, 17, 24, 0.12);
+  background: #fff;
+}
+
+.about-profile-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: grayscale(15%);
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.about-profile-image:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+.about-profile-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(5, 5, 7, 0.55)
+  );
+
+  pointer-events: none;
+}
+
+.portfolio.light .about-profile-overlay {
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(17, 17, 24, 0.18)
+  );
+}
+
+.about-profile-corner {
+  position: absolute;
+
+  width: 32px;
+  height: 32px;
+
+  border-color: #a78bfa;
+  border-style: solid;
+
+  pointer-events: none;
+}
+
+.portfolio.light .about-profile-corner {
+  border-color: #7c3aed;
+}
+
+.about-profile-corner-top {
+  top: 14px;
+  right: 14px;
+
+  border-width: 1px 1px 0 0;
+}
+
+.about-profile-corner-bottom {
+  bottom: 14px;
+  left: 14px;
+
+  border-width: 0 0 1px 1px;
+}
+
+.about-profile-info {
+  margin-top: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.about-profile-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-profile-info span {
+  color: rgba(255, 255, 255, 0.22);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.portfolio.light .about-profile-info span {
+  color: rgba(17, 17, 24, 0.4);
+}
+
+.about-profile-info strong {
+  color: #fff;
+
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.portfolio.light .about-profile-info strong {
+  color: #111118;
+}
+
+/* BODY */
+
+.about-body {
+  max-width: 1250px;
+  margin: 65px auto 0;
+}
+
+.about-content {
+  width: 62%;
+}
+
+/* QUOTE */
+
+.about-quote {
+  position: relative;
+
+  padding: 8px 0 28px 38px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.portfolio.light .about-quote {
+  border-bottom-color: rgba(17, 17, 24, 0.1);
+}
+
+.quote-mark {
+  position: absolute;
+
+  top: -12px;
+  left: 0;
+
+  color: #8b5cf6;
+
+  font-size: 55px;
+  line-height: 1;
+}
+
+.portfolio.light .quote-mark {
+  color: #7c3aed;
+}
+
+.about-quote p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.portfolio.light .about-quote p {
+  color: rgba(17, 17, 24, 0.62);
+}
+
+.quote-line {
+  width: 45px;
+  height: 2px;
+
+  margin-top: 20px;
+
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #67e8f9
+  );
+}
+
+/* PRINCIPLES */
+
+.about-principles {
+  margin-top: 20px;
+}
+
+.about-principle {
+  position: relative;
+
+  min-height: 105px;
+  padding: 22px 48px 22px 0;
+
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 15px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  transition: transform 0.3s ease;
+}
+
+.portfolio.light .about-principle {
+  border-bottom-color: rgba(17, 17, 24, 0.1);
+}
+
+.about-principle:hover {
+  transform: translateX(8px);
+}
+
+.principle-number {
+  color: rgba(167, 139, 250, 0.65);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.portfolio.light .principle-number {
+  color: rgba(124, 58, 237, 0.7);
+}
+
+.principle-content h4 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.portfolio.light .principle-content h4 {
+  color: #111118;
+}
+
+.principle-content p {
+  max-width: 520px;
+
+  margin: 7px 0 0;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.portfolio.light .principle-content p {
+  color: rgba(17, 17, 24, 0.48);
+}
+
+.principle-arrow {
+  position: absolute;
+
+  top: 22px;
+  right: 5px;
+
+  color: rgba(255, 255, 255, 0.25);
+
+  font-size: 18px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.portfolio.light .principle-arrow {
+  color: rgba(17, 17, 24, 0.35);
+}
+
+.about-principle:hover .principle-arrow {
+  color: #c4b5fd;
+  transform: translate(3px, -3px);
+}
+
+.portfolio.light .about-principle:hover .principle-arrow {
+  color: #7c3aed;
+}
+
+/* BOTTOM */
+
+.about-bottom-line {
+  max-width: 1250px;
+  height: 1px;
+
+  margin: 65px auto 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.5),
+    rgba(103, 232, 249, 0.35),
+    transparent
+  );
+}
+
+.portfolio.light .about-bottom-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124, 58, 237, 0.4),
+    rgba(8, 145, 178, 0.3),
+    transparent
+  );
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .about-section {
+    padding: 90px 6vw 75px;
+  }
+
+  .about-header {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section-label {
+    margin-bottom: 40px;
+  }
+
+  .about-heading {
+    width: 65%;
+  }
+
+  .about-profile {
+    top: 170px;
+    right: 6vw;
+    width: 30%;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .about-heading h2 {
+    font-size: clamp(52px, 9vw, 90px);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .about-section {
+    padding: 75px 22px 60px;
+  }
+
+  .about-section-label {
+    margin-bottom: 32px;
+  }
+
+  .about-heading {
+    width: 100%;
+  }
+
+  .about-heading h2 {
+    font-size: clamp(42px, 12vw, 68px);
+    line-height: 0.9;
+  }
+
+  .about-heading h3 {
+    font-size: 22px;
+  }
+
+  .about-description {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+
+  .about-profile {
+    position: relative;
+    top: auto;
+    right: auto;
+
+    width: 100%;
+    max-width: 430px;
+
+    margin: 45px auto 0;
+  }
+
+  .about-body {
+    margin-top: 45px;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .about-profile-info {
+    margin-top: 14px;
+  }
+
+  .about-quote {
+    padding-left: 30px;
+  }
+
+  .about-quote p {
+    font-size: 15px;
+  }
+
+  .about-principle {
+    min-height: 95px;
+    padding: 20px 35px 20px 0;
+  }
+
+  .principle-content p {
+    font-size: 9px;
+  }
+
+  .about-bottom-line {
+    margin-top: 45px;
+  }
+}

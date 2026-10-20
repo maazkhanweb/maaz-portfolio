@@ -1,0 +1,791 @@
+/*
+|--------------------------------------------------------------------------
+| File: src/components/Hero/Hero.css
+| Description: Responsive hero styling with dark and light theme support.
+|--------------------------------------------------------------------------
+*/
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 760px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  background:
+    radial-gradient(circle at 72% 45%, rgba(139, 92, 246, 0.08), transparent 25%),
+    radial-gradient(circle at 15% 80%, rgba(34, 211, 238, 0.025), transparent 28%),
+    #07070a;
+
+  color: #fff;
+}
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+.portfolio.light .hero-section {
+  background:
+    radial-gradient(circle at 72% 45%, rgba(124, 58, 237, 0.08), transparent 25%),
+    radial-gradient(circle at 15% 80%, rgba(8, 145, 178, 0.035), transparent 28%),
+    #f7f7fa;
+
+  color: #111118;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+  opacity: 0.45;
+}
+
+.portfolio.light .hero-grid {
+  background-image:
+    linear-gradient(rgba(17, 17, 24, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 24, 0.035) 1px, transparent 1px);
+
+  opacity: 0.55;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.hero-glow-one {
+  width: 380px;
+  height: 380px;
+  right: 12%;
+  top: 25%;
+  background: rgba(139, 92, 246, 0.055);
+}
+
+.portfolio.light .hero-glow-one {
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.hero-glow-two {
+  width: 260px;
+  height: 260px;
+  left: -100px;
+  bottom: 5%;
+  background: rgba(34, 211, 238, 0.025);
+}
+
+.portfolio.light .hero-glow-two {
+  background: rgba(8, 145, 178, 0.035);
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.hero-status {
+  position: absolute;
+  top: 100px;
+  left: 5vw;
+  right: 5vw;
+  z-index: 5;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.portfolio.light .hero-status {
+  color: rgba(17, 17, 24, 0.4);
+}
+
+.hero-status-left {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hero-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: #34d399;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.7);
+
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.hero-container {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  max-width: 1450px;
+  flex: 1;
+
+  margin: auto;
+  padding: 145px 5vw 75px;
+
+  display: grid;
+  grid-template-columns: 54% 46%;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  padding-left: 1vw;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.portfolio.light .hero-eyebrow {
+  color: rgba(17, 17, 24, 0.45);
+}
+
+.hero-eyebrow span {
+  color: #a78bfa;
+  font-weight: 800;
+}
+
+.portfolio.light .hero-eyebrow span {
+  color: #7c3aed;
+}
+
+.hero-eyebrow i {
+  width: 35px;
+  height: 1px;
+  background: linear-gradient(90deg, #8b5cf6, transparent);
+}
+
+.hero-eyebrow strong {
+  font-size: 9px;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.hero-content h1 {
+  margin: 0;
+  max-width: 760px;
+
+  color: #fff;
+
+  font-size: clamp(64px, 7vw, 112px);
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.portfolio.light .hero-content h1 {
+  color: #111118;
+}
+
+.hero-content h1 span {
+  background: linear-gradient(
+    100deg,
+    #fff 0%,
+    #ddd6fe 20%,
+    #a78bfa 48%,
+    #67e8f9 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio.light .hero-content h1 span {
+  background: linear-gradient(
+    100deg,
+    #312e81 0%,
+    #7c3aed 45%,
+    #0891b2 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+  max-width: 530px;
+  margin: 30px 0 0;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.portfolio.light .hero-description {
+  color: rgba(17, 17, 24, 0.58);
+}
+
+/* =========================================================
+   TECHNOLOGIES
+========================================================= */
+
+.hero-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 20px;
+
+  color: rgba(255, 255, 255, 0.27);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.portfolio.light .hero-technologies {
+  color: rgba(17, 17, 24, 0.45);
+}
+
+.hero-technologies i {
+  color: #8b5cf6;
+  font-style: normal;
+  font-size: 10px;
+}
+
+.portfolio.light .hero-technologies i {
+  color: #7c3aed;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-primary-button,
+.hero-secondary-button {
+  min-height: 48px;
+  padding: 0 7px 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+
+  cursor: pointer;
+  transition: 0.35s ease;
+}
+
+.hero-primary-button {
+  min-width: 165px;
+
+  border: 1px solid rgba(139, 92, 246, 0.45);
+
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #6366f1
+  );
+
+  color: #fff;
+
+  box-shadow: 0 12px 35px rgba(124, 58, 237, 0.15);
+}
+
+.hero-secondary-button {
+  min-width: 145px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.015);
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.portfolio.light .hero-secondary-button {
+  border-color: rgba(17, 17, 24, 0.14);
+  background: rgba(255, 255, 255, 0.65);
+  color: rgba(17, 17, 24, 0.7);
+}
+
+.hero-primary-button svg,
+.hero-secondary-button svg {
+  width: 34px;
+  height: 34px;
+
+  padding: 8px;
+
+  border-radius: 5px;
+
+  transition: transform 0.3s ease;
+}
+
+.hero-primary-button svg {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-secondary-button svg {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.portfolio.light .hero-secondary-button svg {
+  background: rgba(17, 17, 24, 0.06);
+}
+
+.hero-primary-button:hover,
+.hero-secondary-button:hover {
+  transform: translateY(-3px);
+}
+
+.hero-primary-button:hover {
+  border-color: rgba(196, 181, 253, 0.8);
+  box-shadow: 0 18px 45px rgba(124, 58, 237, 0.25);
+}
+
+.hero-secondary-button:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  background: rgba(139, 92, 246, 0.06);
+  color: #fff;
+}
+
+.portfolio.light .hero-secondary-button:hover {
+  color: #111118;
+  background: rgba(124, 58, 237, 0.06);
+  border-color: rgba(124, 58, 237, 0.35);
+}
+
+.hero-primary-button:hover svg,
+.hero-secondary-button:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================================
+   SOCIALS
+========================================================= */
+
+.hero-socials {
+  display: flex;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.hero-socials a {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.portfolio.light .hero-socials a {
+  border-color: rgba(17, 17, 24, 0.12);
+  color: rgba(17, 17, 24, 0.5);
+}
+
+.hero-socials a:hover {
+  transform: translateY(-3px);
+
+  color: #fff;
+  border-color: rgba(167, 139, 250, 0.5);
+  background: rgba(139, 92, 246, 0.07);
+}
+
+.portfolio.light .hero-socials a:hover {
+  color: #7c3aed;
+  border-color: rgba(124, 58, 237, 0.35);
+  background: rgba(124, 58, 237, 0.06);
+}
+
+/* =========================================================
+   3D
+========================================================= */
+
+.hero-three-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-three-label {
+  position: absolute;
+  top: 35px;
+  right: 5%;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: rgba(255, 255, 255, 0.22);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.portfolio.light .hero-three-label {
+  color: rgba(17, 17, 24, 0.4);
+}
+
+.hero-three-label i {
+  width: 25px;
+  height: 1px;
+  background: rgba(167, 139, 250, 0.5);
+}
+
+.hero-three-label strong {
+  color: #a78bfa;
+}
+
+.portfolio.light .hero-three-label strong {
+  color: #7c3aed;
+}
+
+.hero-three-info {
+  position: absolute;
+  right: 8%;
+  bottom: 35px;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  color: rgba(255, 255, 255, 0.2);
+
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+
+  text-align: right;
+}
+
+.portfolio.light .hero-three-info {
+  color: rgba(17, 17, 24, 0.4);
+}
+
+.hero-three-info span:last-child {
+  color: rgba(167, 139, 250, 0.6);
+}
+
+.portfolio.light .hero-three-info span:last-child {
+  color: rgba(124, 58, 237, 0.7);
+}
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.hero-bottom {
+  position: absolute;
+
+  left: 5vw;
+  right: 5vw;
+  bottom: 20px;
+  z-index: 5;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.2);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.portfolio.light .hero-bottom {
+  color: rgba(17, 17, 24, 0.4);
+}
+
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-scroll svg {
+  color: #a78bfa;
+  animation: heroScroll 1.8s ease-in-out infinite;
+}
+
+.portfolio.light .hero-scroll svg {
+  color: #7c3aed;
+}
+
+@keyframes heroScroll {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.hero-location {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+
+.hero-location strong {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.portfolio.light .hero-location strong {
+  color: rgba(17, 17, 24, 0.55);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .hero-section {
+    min-height: 850px;
+  }
+
+  .hero-status {
+    top: 92px;
+  }
+
+  .hero-container {
+    padding: 135px 6vw 70px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding-left: 0;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(62px, 9vw, 95px);
+  }
+
+  .hero-description {
+    max-width: 600px;
+  }
+
+  .hero-three-wrapper {
+    height: 400px;
+    margin-top: 5px;
+  }
+
+  .hero-three-label {
+    top: 0;
+    right: 10%;
+  }
+
+  .hero-three-info {
+    bottom: 10px;
+    right: 10%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .hero-section {
+    min-height: 800px;
+  }
+
+  .hero-grid {
+    background-size: 55px 55px;
+  }
+
+  .hero-status {
+    top: 84px;
+    left: 22px;
+    right: 22px;
+    font-size: 6px;
+  }
+
+  .hero-container {
+    padding: 125px 22px 60px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 20px;
+    font-size: 7px;
+  }
+
+  .hero-eyebrow i {
+    width: 24px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(48px, 13vw, 70px);
+    line-height: 0.88;
+  }
+
+  .hero-description {
+    margin-top: 25px;
+    font-size: 12px;
+  }
+
+  .hero-technologies {
+    margin-top: 18px;
+    gap: 7px;
+    font-size: 6px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 280px;
+    margin-top: 25px;
+  }
+
+  .hero-primary-button,
+  .hero-secondary-button {
+    width: 100%;
+  }
+
+  .hero-socials {
+    margin-top: 18px;
+  }
+
+  .hero-three-wrapper {
+    height: 300px;
+  }
+
+  .hero-three-label {
+    top: 0;
+    right: 5%;
+  }
+
+  .hero-three-info {
+    bottom: 0;
+    right: 5%;
+  }
+
+  .hero-bottom {
+    left: 22px;
+    right: 22px;
+    bottom: 15px;
+    font-size: 6px;
+  }
+
+  .hero-location {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .hero-section {
+    min-height: 760px;
+  }
+
+  .hero-container {
+    padding: 120px 18px 55px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(43px, 12.5vw, 60px);
+  }
+
+  .hero-description {
+    font-size: 11px;
+  }
+
+  .hero-three-wrapper {
+    height: 270px;
+  }
+
+  .hero-bottom {
+    left: 18px;
+    right: 18px;
+  }
+}

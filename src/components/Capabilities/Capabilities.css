@@ -1,0 +1,485 @@
+/*
+|--------------------------------------------------------------------------
+| File: src/components/Capabilities/Capabilities.css
+| Description: Responsive capabilities section with dark/light mode.
+|--------------------------------------------------------------------------
+*/
+
+.capabilities-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 7vw 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(139,92,246,.05), transparent 30%),
+    #07070a;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,.03);
+}
+
+.capabilities-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255,255,255,.014) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: .3;
+}
+
+/* LIGHT MODE */
+
+.portfolio.light .capabilities-section {
+  background:
+    radial-gradient(circle at 80% 30%, rgba(124,58,237,.07), transparent 30%),
+    #f7f7fa;
+  color: #111118;
+  border-top-color: rgba(17,17,24,.08);
+}
+
+.portfolio.light .capabilities-section::before {
+  background:
+    linear-gradient(rgba(17,17,24,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,24,.035) 1px, transparent 1px);
+}
+
+/* HEADER */
+
+.capabilities-header {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.capabilities-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  color: rgba(255,255,255,.3);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+
+.portfolio.light .capabilities-label {
+  color: rgba(17,17,24,.45);
+}
+
+.capabilities-label span {
+  color: #8b5cf6;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.capabilities-label i {
+  width: 30px;
+  height: 1px;
+  background: linear-gradient(90deg,#8b5cf6,transparent);
+}
+
+.capabilities-label strong {
+  font-size: 9px;
+}
+
+.capabilities-heading {
+  max-width: 900px;
+}
+
+.capabilities-kicker {
+  margin: 0 0 18px;
+  color: rgba(255,255,255,.28);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .25em;
+}
+
+.portfolio.light .capabilities-kicker {
+  color: rgba(17,17,24,.45);
+}
+
+.capabilities-heading h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(52px,6.5vw,92px);
+  line-height: .88;
+  letter-spacing: -.06em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.portfolio.light .capabilities-heading h2 {
+  color: #111118;
+}
+
+.capabilities-heading h2 span {
+  background: linear-gradient(
+    100deg,
+    #fff,
+    #ddd6fe 20%,
+    #a78bfa 50%,
+    #67e8f9
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio.light .capabilities-heading h2 span {
+  background: linear-gradient(
+    100deg,
+    #111118,
+    #7c3aed 55%,
+    #0891b2
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.capabilities-description {
+  max-width: 600px;
+  margin: 25px 0 0;
+  color: rgba(255,255,255,.4);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.portfolio.light .capabilities-description {
+  color: rgba(17,17,24,.58);
+}
+
+/* GRID */
+
+.capabilities-grid {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.portfolio.light .capabilities-grid {
+  border-color: rgba(17,17,24,.1);
+}
+
+/* CARDS */
+
+.capability-card {
+  position: relative;
+  min-height: 235px;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: rgba(255,255,255,.008);
+  border-right: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: transform .4s ease, background .4s ease;
+}
+
+.portfolio.light .capability-card {
+  background: rgba(17,17,24,.015);
+  border-color: rgba(17,17,24,.1);
+}
+
+.capability-card:nth-child(2),
+.capability-card:nth-child(4) {
+  border-right: 0;
+}
+
+.capability-card:nth-child(3),
+.capability-card:nth-child(4) {
+  border-bottom: 0;
+}
+
+.capability-card:hover {
+  transform: translateY(-5px);
+  background: rgba(139,92,246,.035);
+}
+
+.capability-number {
+  color: #8b5cf6;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.capability-category {
+  position: absolute;
+  top: 23px;
+  right: 23px;
+  color: rgba(255,255,255,.22);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.portfolio.light .capability-category {
+  color: rgba(17,17,24,.4);
+}
+
+/* CONTENT */
+
+.capability-content h3 {
+  margin: 0 0 13px;
+  color: #fff;
+  font-size: clamp(30px,3.2vw,48px);
+  line-height: .96;
+  letter-spacing: -.05em;
+  font-weight: 900;
+  transition: .35s ease;
+}
+
+.portfolio.light .capability-content h3 {
+  color: #111118;
+}
+
+.capability-card:hover h3 {
+  background: linear-gradient(100deg,#fff,#c4b5fd,#67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio.light .capability-card:hover h3 {
+  background: linear-gradient(100deg,#111118,#7c3aed,#0891b2);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.capability-content p {
+  max-width: 480px;
+  margin: 0;
+  color: rgba(255,255,255,.35);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.portfolio.light .capability-content p {
+  color: rgba(17,17,24,.58);
+}
+
+.capability-content span {
+  display: block;
+  margin-top: 16px;
+  color: rgba(255,255,255,.2);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .17em;
+}
+
+.portfolio.light .capability-content span {
+  color: rgba(17,17,24,.42);
+}
+
+/* ARROW */
+
+.capability-arrow {
+  position: absolute;
+  right: 23px;
+  bottom: 23px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(255,255,255,.4);
+  font-size: 13px;
+  cursor: pointer;
+  transition: .35s ease;
+}
+
+.portfolio.light .capability-arrow {
+  border-color: rgba(17,17,24,.14);
+  color: rgba(17,17,24,.6);
+}
+
+.capability-arrow:hover {
+  transform: rotate(45deg);
+  border-color: rgba(167,139,250,.65);
+  background: rgba(139,92,246,.1);
+  color: #c4b5fd;
+}
+
+/* ACCENT */
+
+.capability-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform .4s ease;
+}
+
+.capability-card:hover::before {
+  transform: scaleY(1);
+}
+
+.capability-card-1::before { background: #a78bfa; }
+.capability-card-2::before { background: #8b5cf6; }
+.capability-card-3::before { background: #818cf8; }
+.capability-card-4::before { background: #67e8f9; }
+
+/* BOTTOM */
+
+.capabilities-bottom {
+  max-width: 850px;
+  margin: 38px auto 0;
+  padding: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-block: 1px solid rgba(255,255,255,.06);
+  color: rgba(255,255,255,.25);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .17em;
+}
+
+.portfolio.light .capabilities-bottom {
+  border-color: rgba(17,17,24,.1);
+  color: rgba(17,17,24,.45);
+}
+
+.capabilities-bottom i {
+  color: #8b5cf6;
+  font-style: normal;
+  font-size: 11px;
+}
+
+.capabilities-bottom strong {
+  color: #fff;
+  font-size: 8px;
+}
+
+.portfolio.light .capabilities-bottom strong {
+  color: #111118;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1050px) {
+  .capabilities-section {
+    padding: 85px 6vw 70px;
+  }
+
+  .capabilities-heading h2 {
+    font-size: clamp(50px,8vw,88px);
+  }
+
+  .capability-card {
+    min-height: 220px;
+  }
+}
+
+@media (max-width:650px) {
+  .capabilities-section {
+    padding: 70px 22px 55px;
+  }
+
+  .capabilities-heading h2 {
+    font-size: clamp(40px,11.5vw,64px);
+  }
+
+  .capabilities-description {
+    font-size: 12px;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-card {
+    min-height: 205px;
+    padding: 22px 20px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  .portfolio.light .capability-card {
+    border-bottom-color: rgba(17,17,24,.1);
+  }
+
+  .capability-card:last-child {
+    border-bottom: 0;
+  }
+
+  .capability-category {
+    top: 22px;
+    right: 20px;
+  }
+
+  .capability-content h3 {
+    font-size: clamp(31px,9vw,48px);
+  }
+
+  .capability-content p {
+    font-size: 11px;
+  }
+
+  .capability-content span {
+    font-size: 6px;
+  }
+
+  .capability-arrow {
+    right: 20px;
+    bottom: 20px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .capabilities-bottom {
+    margin-top: 32px;
+    gap: 7px;
+    padding: 16px 9px;
+    font-size: 6px;
+  }
+
+  .capabilities-bottom strong {
+    font-size: 7px;
+  }
+}
+
+@media (max-width:420px) {
+  .capabilities-section {
+    padding: 62px 18px 50px;
+  }
+
+  .capabilities-heading h2 {
+    font-size: clamp(37px,11.2vw,57px);
+  }
+
+  .capabilities-description {
+    font-size: 11px;
+  }
+
+  .capability-card {
+    min-height: 190px;
+    padding: 20px 18px;
+  }
+
+  .capability-content h3 {
+    font-size: 27px;
+  }
+
+  .capability-content p {
+    font-size: 10px;
+  }
+
+  .capability-arrow {
+    right: 18px;
+    bottom: 18px;
+    width: 33px;
+    height: 33px;
+  }
+}
